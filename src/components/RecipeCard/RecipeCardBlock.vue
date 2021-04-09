@@ -16,13 +16,13 @@
 
       <section class="list">
         <ul class="ingredients">
-          <h2>Ingredients - Serving Size {{ recipe.servings }}</h2>
+          <h2>Ingredients  <span class="serve">- Serving Size {{ recipe.servings }}</span></h2>
           <li v-for="ing in recipe.ingredients" :key="ing">
             {{ ing }}
           </li>
         </ul>
         <ol class="directions">
-          <h2>Directions</h2>
+          <h2>Directions:</h2>
           <li v-for="dir in recipe.directions" :key="dir">
             {{ dir }}
           </li>
@@ -70,6 +70,7 @@ header {
   font-size: 1rem;
 }
 h1 {
+  padding: 1rem;
   font-size: 2.5rem;
 }
 div {
@@ -81,7 +82,10 @@ div {
   background: rgba(0, 0, 0, 0.75);
 }
 p {
-  font-size: 1.5rem;
+  @media (min-width:600px) {
+    font-size:1.5rem;
+  }
+  font-size: 1.25rem;
   padding: 1rem;
 }
 a,
@@ -109,5 +113,9 @@ section {
   ul {
     flex: 1 0;
   }
+}
+.serve{
+  font-weight: 300;
+  font-size:.9em
 }
 </style>

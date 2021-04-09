@@ -46,7 +46,7 @@ export default {
       // scrolls to position on click
       this.scrollPosition = window.scrollY;
       this.screenHeight = window.innerHeight * 0.85;
-      window.scrollBy(0, this.screenHeight);
+      window.scrollTo(0, this.screenHeight);
     },
     // change colour of nav at certain screen height
     changeColour() {
