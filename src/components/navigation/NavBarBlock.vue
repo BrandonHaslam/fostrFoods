@@ -27,6 +27,7 @@
 
 <script>
 export default {
+  name: "NavBarBlock",
   data: () => ({
     filterInput: "",
     filterOption: "",
@@ -42,10 +43,12 @@ export default {
     },
     filterEmit() {
       this.$emit("filter-emit", this.filterInput, this.filterOption);
-      console.log(this.filterOption);
-      console.log(this.filterInput);
-      // this.$emit(this.filterOption,this.filterInput)
+      // scrolls to position on click
+      this.scrollPosition = window.scrollY;
+      this.screenHeight = window.innerHeight * 0.85;
+      window.scrollBy(0, this.screenHeight);
     },
+    // change colour of nav at certain screen height
     changeColour() {
       this.scrollPosition = window.scrollY;
       this.screenHeight = window.innerHeight * 0.75;

@@ -8,7 +8,9 @@
   </header>
 </template>
 <script>
-export default {};
+export default {
+  name: "hero",
+};
 </script>
 <style lang="scss" scoped>
 header {

@@ -25,6 +25,7 @@ import Hero from "../header/Hero";
 import RecipeListItem from "./recipeListItem";
 import RecipeCard from "../RecipeCard/RecipeCardBlock";
 export default {
+  name:'RecipeListBlock',
   components: {
     Hero,
     RecipeListItem,
@@ -44,26 +45,23 @@ export default {
   }),
   methods: {
     emitTitle(id) {
-      //  this.$emit('select-recipe',id)
-      // console.log(id + ' log');
-      // this.currentPage=""
       this.currentRecipe = id;
       this.currentPage = "recipe-card";
-      console.log(id);
     },
+    // filters through string values
     stringFilter(input, filter) {
       let filtered = this.recipeData.filter((recipe) =>
         recipe[filter].toLowerCase().includes(input.toLowerCase())
       );
       return filtered;
     },
+// filters through array values
     arrayFilter(input, filter) {
       let filtered = this.recipeData.filter((recipe) =>
         recipe[filter.toLowerCase()].some((i) =>
           i.includes(input.toLowerCase())
         )
       );
-      console.log(filtered);
       return filtered;
     },
   },

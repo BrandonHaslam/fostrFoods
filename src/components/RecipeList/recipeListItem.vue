@@ -23,6 +23,7 @@
 </template>
 <script>
 export default {
+  name:'RecipeListItem',
   data: () => ({
     image: "",
     imagePresent: true,

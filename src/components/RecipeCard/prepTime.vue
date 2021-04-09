@@ -10,6 +10,7 @@
 </template>
 <script>
 export default {
+  name:'prepTime',
   props: {
     prepTime: {
       type: String,

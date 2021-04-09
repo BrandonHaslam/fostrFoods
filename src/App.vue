@@ -7,11 +7,9 @@
   ></recipe-list>
   <the-footer></the-footer>
 </template>
-    // :recipeTitle="currentRecipe"
-    // @selectRecipe="changeCurrentRecipe"
 <script>
 import NavBar from "./components/navigation/NavBarBlock.vue";
-import TheFooter from "./components/footer/footerBlock";
+import TheFooter from "./components/footer/TheFooter";
 import RecipeList from "./components/RecipeList/RecipeListBlock";
 import RecipeCard from "./components/RecipeCard/RecipeCardBlock";
 export default {
@@ -22,20 +20,14 @@ export default {
     RecipeCard,
     TheFooter,
   },
-  data() {
-    return {
+  data:() =>({
       recipeData: [],
       currentPage: "recipe-list",
       currentRecipe: "Basil and pesto Hummus",
       filter: ["", "all"],
-    };
-  },
+    
+  }),
   methods: {
-    // changeCurrentRecipe(recipe) {
-    //   this.currentRecipe = recipe;
-    //   this.currentPage = "recipe-card";
-    //   console.log(recipe);
-    // },
     setFilter(input, option) {
       this.filter = [input, option];
     },
@@ -57,9 +49,6 @@ export default {
   },
   created() {
     this.fetchData();
-  },
-  provide() {
-    return {};
   },
 };
 </script>

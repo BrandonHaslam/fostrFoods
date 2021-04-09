@@ -34,6 +34,7 @@
 <script>
 import prepTime from "./prepTime.vue";
 export default {
+  name: "RecipeCardBlock",
   components: { prepTime },
   props: {
     recipeData: {
@@ -46,6 +47,7 @@ export default {
     },
   },
   computed: {
+    // finds current recipe clicked, filters through all recipes by matching title
     recipe() {
       let recipe = this.recipeData.find(
         (recipe) => recipe.title.toLowerCase() == this.recipeTitle.toLowerCase()
