@@ -19,8 +19,8 @@
         <option value="description">Description</option>
         <!-- add too RecipeListBlock also -->
       </select>
-      <button @click="resetFilter()">Reset</button>
       <button>Submit</button>
+    <button @click.prevent="resetFilter()">Reset</button>
     </form>
   </nav>
 </template>
@@ -102,9 +102,6 @@ select,
 option,
 input,
 button {
-  // @media (min-height:400px) {
-  //   padding:2px 10px
-  // }
   height: 2rem;
   padding: 2px 5px;
   background: black;
