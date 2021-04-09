@@ -1,4 +1,4 @@
-# fostrFoods
+# FostrFoods
 ```
 Fostr.io tech test
 - Download the file 
