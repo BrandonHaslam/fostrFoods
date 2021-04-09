@@ -1,5 +1,6 @@
 # fostrFoods
-```Fostr tech test
+```
+Fostr.io tech test
 - Download the file 
 - npm i 
 - npm run serve.
