@@ -13,11 +13,11 @@ export default {
   name:'prepTime',
   props: {
     prepTime: {
-      type: String,
+      type: [String, Number],
       default: "N/A",
     },
     cookTime: {
-      type: String,
+      type:[String, Number],
       default: "N/A",
     },
   },

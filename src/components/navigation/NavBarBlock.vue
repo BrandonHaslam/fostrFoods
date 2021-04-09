@@ -51,7 +51,7 @@ export default {
     // change colour of nav at certain screen height
     changeColour() {
       this.scrollPosition = window.scrollY;
-      this.screenHeight = window.innerHeight * 0.75;
+      this.screenHeight = window.innerHeight * 0.5;
       this.scrollPosition > this.screenHeight
         ? (this.pastHero = true)
         : (this.pastHero = false);

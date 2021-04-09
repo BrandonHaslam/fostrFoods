@@ -15,11 +15,9 @@
       </section>
 
       <section class="list">
-        <ul class="ingredients">
-          <h2>Ingredients  <span class="serve">- Serving Size {{ recipe.servings }}</span></h2>
-          <li v-for="ing in recipe.ingredients" :key="ing">
-            {{ ing }}
-          </li>
+        <ul>
+          <ingredientList class="ing" :serving="recipe.servings" :ingredients="recipe.ingredients">
+          </ingredientList>
         </ul>
         <ol class="directions">
           <h2>Directions:</h2>
@@ -33,9 +31,10 @@
 </template>
 <script>
 import prepTime from "./prepTime.vue";
+import ingredientList from "./ingredientList";
 export default {
   name: "RecipeCardBlock",
-  components: { prepTime },
+  components: { prepTime, ingredientList },
   props: {
     recipeData: {
       type: Array,
@@ -47,6 +46,9 @@ export default {
     },
   },
   computed: {
+    servingSize() {
+      return this.recipe.servings;
+    },
     // finds current recipe clicked, filters through all recipes by matching title
     recipe() {
       let recipe = this.recipeData.find(
@@ -60,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 header {
   @media (min-width: 600px) {
-    padding: 2rem 5rem;
+    padding: 3rem 5rem;
     font-size: 1.25rem;
   }
   padding: 5rem 0.5rem;
@@ -82,8 +84,8 @@ div {
   background: rgba(0, 0, 0, 0.75);
 }
 p {
-  @media (min-width:600px) {
-    font-size:1.5rem;
+  @media (min-width: 600px) {
+    font-size: 1.5rem;
   }
   font-size: 1.25rem;
   padding: 1rem;
@@ -107,15 +109,15 @@ section {
 .list {
   @media (min-width: 600px) {
     display: flex;
+
   }
   padding: 0 2rem;
-  ol,
-  ul {
+  ol,ul {
     flex: 1 0;
   }
 }
-.serve{
+.serve {
   font-weight: 300;
-  font-size:.9em
+  font-size: 0.9em;
 }
 </style>
