@@ -1,12 +1,16 @@
 <template>
-    <section>
-      <h5>Prep Time: <span>{{ prepTime }} mins </span></h5>
-      <h5>Cooking Time: <span>{{ cookTime }} mins </span></h5>
-    </section>
+  <section>
+    <h5>
+      Prep Time: <span>{{ prepTime }} mins </span>
+    </h5>
+    <h5>
+      Cooking Time: <span>{{ cookTime }} mins </span>
+    </h5>
+  </section>
 </template>
 <script>
 export default {
-    props:{
+  props: {
     prepTime: {
       type: String,
       default: "N/A",
@@ -15,14 +19,14 @@ export default {
       type: String,
       default: "N/A",
     },
-    }
-}
+  },
+};
 </script>
 <style lang="scss" scoped>
-section{
+section {
   display: flex;
 }
-h5{
+h5 {
   padding: 0 1rem;
 }
 </style>

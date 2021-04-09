@@ -94,7 +94,6 @@ ul {
   list-style: none;
   flex-wrap: wrap;
   display: flex;
-  // align-items: stretch;
   justify-content: center;
 }
 </style>
